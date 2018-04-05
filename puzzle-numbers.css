@@ -70,6 +70,12 @@ table td {
     padding-bottom: 15px;
 }
 
+.solved {
+    margin: auto;
+    font-size: 30px;
+    font-family: 'Playfair Display', serif;
+}
+
 /*Bootstrap 3.3.0 Snippet by quaisar*/
 #cssmenu {
   padding: 0;
@@ -262,4 +268,3 @@ table td {
   -moz-border-radius: 3px 0 0 3px;
   border-radius: 3px 0 0 3px;
 }
-

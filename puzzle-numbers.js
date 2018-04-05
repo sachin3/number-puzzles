@@ -35,7 +35,8 @@ PZN.UI = {
     gridHeight: 4,
     gridWidth: 4,
 
-    initPage: function() {
+    initPage: function () {
+        $(".solved").addClass("hidden");
     },
 
     swapCells: function (cell) {
@@ -76,6 +77,11 @@ PZN.Events = {
         try {
             $("#drawingCanvas").on("click", "td", function () {
                 PZN.UI.swapCells($(this));
+                // verify if solved.
+                if (PZN.CommandHelper.checkIfSolved()) {
+                    PZN.UI.grid.children().remove();
+                    $(".solved").removeClass("hidden").fadeIn(1000);
+                }
             });
         }
         catch (ex) {
@@ -129,6 +135,7 @@ PZN.Commands = {
         try {
             // Create table
             PZN.UI.grid = $("#drawingCanvas");
+            PZN.Data.puzzleCellColl = null;
             PZN.UI.grid.children().remove();
             PZN.CommandHelper.createTable(PZN.UI.grid, PZN.UI.gridWidth, PZN.UI.gridHeight);
         }
@@ -221,6 +228,22 @@ PZN.CommandHelper = {
             return true;
         }
 
+        return false;
+    },
+
+    checkIfSolved: function () {
+        const cellCollection = PZN.Data.puzzleCellColl;
+        let number = 1;
+        for (let i = 0; i < cellCollection.length - 2; ++i) {
+            if (cellCollection[i] !== number++) {
+                return false;
+            }
+        }
+        // check last cell is empty
+        let emptyCellArrayIndexIfSolved = PZN.UI.gridHeight * PZN.UI.gridWidth;
+        if (cellCollection[emptyCellArrayIndexIfSolved - 2] === emptyCellArrayIndexIfSolved - 1) {
+            return true;
+        }
         return false;
     }
 }
