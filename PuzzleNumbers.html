@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Puzzles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="https://bootsnipp.com/j87klPolka/assets3/css/lib/bootstrap.min.css">
+    <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="https://s7.postimg.org/u4zqygazf/Number_Puzzles_III.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="puzzle-numbers.css">
+</head>
+<body class="pixel-art-maker">
+    <form id="puzzleNumber" class="puzzle-form">
+        <div class="container">
+            <div class="row">
+                <nav class="menu" id="cssmenu">
+                    <ul>
+                        <li class="active"><a href='#'>Number Puzzles</a></li>
+                        <li><a href='javascript:PZN.Events.onRefreshClicked();'>Refresh</a></li>
+                        <li class='has-sub'>
+                            <a href='#'>Grid Size</a>
+                            <ul>
+                                <li><a href='javascript:PZN.Events.onGridSizeChangeClicked(4);'>4 x 4</a></li>
+                                <li><a href='javascript:PZN.Events.onGridSizeChangeClicked(5);'>5 x 5</a></li>
+                                <li><a href='javascript:PZN.Events.onGridSizeChangeClicked(6);'>6 x 6</a></li>
+                            </ul>
+                        </li>
+                        <li class='has-sub'>
+                            <a>Help</a>
+                            <ul>
+                                <li><a>Click numbers in and around empty cell and rearrange them in order</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </form>
+    <div id="button" class="btn hidden">
+        <div class="number"></div>
+    </div>
+    <div class="container-canvas">
+        <table id="drawingCanvas"></table>
+    </div>
+    <script src="puzzle-numbers.js"></script>
+    <footer>© 2018 - Created by Sachin</footer>
+</body>
+</html>
