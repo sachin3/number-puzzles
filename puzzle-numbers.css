@@ -32,8 +32,9 @@ footer {
     width: 100%;
     text-align: right;
     font-style: italic;
+    font-size: 9px;
     padding-right: 12px;
-    padding-bottom: 12px;
+    padding-bottom: 3px;
     background-color: black;
 }
 
@@ -74,6 +75,43 @@ table td {
     margin: auto;
     font-size: 30px;
     font-family: 'Playfair Display', serif;
+}
+
+.material-icons {
+    font-size: 30px;
+    line-height: 0;
+}
+
+.menu-top-level {
+    font-size: 12px;
+}
+
+
+
+.menu-help {
+    text-transform: none !important;
+}
+
+.menu {
+
+}
+
+.menu-icon {
+}
+
+.small-screen-only {
+    display: none;
+}
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) { 
+    .menu-small-screen {
+    }
+
+    .menu-item-hidden {
+        display: none;
+    }
 }
 
 /*Bootstrap 3.3.0 Snippet by quaisar*/
@@ -141,10 +179,10 @@ table td {
 }
 /* Custom CSS Styles */
 #cssmenu {
-  width: 200px;
+  width: 100px;
   background: #373A47;
   zoom: 1;
-  font-size: 12px;
+  font-size: 10px;
 }
 #cssmenu:before {
   content: '';
@@ -163,7 +201,7 @@ table td {
   text-transform: uppercase;
 }
 #cssmenu > ul {
-  width: 248px;
+    width: 130px;
 }
 #cssmenu ul ul {
   width: 220px;

@@ -18,9 +18,17 @@
             <div class="row">
                 <nav class="menu" id="cssmenu">
                     <ul>
-                        <li class="active"><a href='#'>Numbers Puzzle</a></li>
-                        <li><a href='javascript:PZN.Events.onRefreshClicked();'>Refresh</a></li>
-                        <li class='has-sub'>
+                        <li class="menu-top-level active">
+                            <div>
+                                <a href='#'>
+                                    <i class="menu-small-screen menu-icon material-icons">toc</i>
+                                    <span class="menu">Numbers Puzzle</span>
+                                </a>
+                                
+                            </div>
+                        </li>
+                        <li class="menu-item menu-item-hidden"><a href='javascript:PZN.Events.onRefreshClicked();'>Refresh</a></li>
+                        <li class='menu-item menu-item-hidden has-sub'>
                             <a href='#'>Game Mode</a>
                             <ul>
                                 <li><a href='javascript:PZN.Events.onGridSizeChangeClicked(4);'>4 x 4</a></li>
@@ -28,13 +36,13 @@
                                 <li><a href='javascript:PZN.Events.onGridSizeChangeClicked(6);'>6 x 6</a></li>
                             </ul>
                         </li>
-                        <li class='has-sub'>
+                        <li class='menu-item menu-item-hidden has-sub'>
                             <a>Help</a>
                             <ul>                                
                                 <li>
                                     <div>
-                                        <a>Click numbers around empty cell to move and arrange them in order. </a>
-                                        <img src="https://s9.postimg.org/7o9rhpgxr/Number_Puzzles.png"></img>
+                                        <a class="menu-help">Click on numbers around empty cell and arrange them in order</a>
+                                        <img src="https://s9.postimg.org/7o9rhpgxr/Number_Puzzles.png" />
                                     </div>
                                 </li>                                    
                             </ul>
@@ -49,6 +57,7 @@
     </div>
     <div class="container-canvas">
         <table id="drawingCanvas"></table>
+        <div class="small-screen-only">Tap on cells around empty cell to move</div>
         <div class="solved hidden">Congralutations! Click Refresh to restart.</div>
     </div>
     <script src="puzzle-numbers.js"></script>
