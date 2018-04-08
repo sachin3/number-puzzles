@@ -8,12 +8,6 @@
  */
 
 
-$("#sizePicker").submit(function (e) {
-    e.preventDefault();
-    PZN.Commands.makeGrid();
-});
-
-
 PZN = {};
 
 PZN.Consts = {
@@ -76,12 +70,20 @@ PZN.Events = {
     bindEvents: function () {
         try {
             $("#drawingCanvas").on("click", "td", function () {
+                var isSafari = window.safari !== undefined;
+                if (isSafari) {
+                    $(".small-screen-only").removeClass();
+                }
                 PZN.UI.swapCells($(this));
                 // verify if solved.
                 if (PZN.CommandHelper.checkIfSolved()) {
                     PZN.UI.grid.children().remove();
                     $(".solved").removeClass("hidden").fadeIn(1000);
                 }
+            });
+
+            $(".menu-top-level").click(function () {
+                $(".menu").find("li.menu-item").toggleClass("menu-item-hidden");
             });
         }
         catch (ex) {
